@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }else{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath)
-        cell.textLabel?.text = arr1[indexPath.row]
+        cell.textLabel?.text = arr2[indexPath.row]
         return cell
     
     }
@@ -47,5 +47,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 
 }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            if tableView == tbl1{
+                arr1.remove(at: indexPath.row)
+            }else{
+                arr2.remove(at: indexPath.row)
+            }
+            tableView.deleteRows(at: [indexPath],  with: .fade)
+
+        }
+    }
 
 }
