@@ -1,0 +1,6 @@
+framework module Pods_Assignment5_StockHistPrice {
+  umbrella header "Pods-Assignment5_StockHistPrice-umbrella.h"
+
+  export *
+  module * { export * }
+}
